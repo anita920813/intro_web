@@ -1,17 +1,243 @@
-l<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Static Website</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>我的日系足跡 | 日本旅遊隨筆</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <center>
-    <h1 class="text-center">Hello, World!</h1>
-    <h2>This will be the homepage for this website!</h2>
-    <button>Login</button>
-    <hr>
-    </center>
+<body class="bg-amber-50/40 text-slate-800 font-sans antialiased">
+
+    <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-orange-100 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold text-teal-700 tracking-wider font-serif">
+                        <i class="fa-solid fa-compass mr-2 text-orange-400"></i>YI-CHEN'S TRAVEL
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="text-slate-600 hover:text-teal-600 px-3 py-2 text-sm font-medium transition-colors">關於我</a>
+                        <a href="#portfolio" class="text-slate-600 hover:text-teal-600 px-3 py-2 text-sm font-medium transition-colors">旅誌足跡</a>
+                        <a href="#contact" class="text-slate-600 hover:text-teal-600 px-3 py-2 text-sm font-medium transition-colors">保持聯絡</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-teal-600 hover:bg-slate-100 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-white border-b border-orange-100" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-teal-600">關於我</a>
+                <a href="#portfolio" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-teal-600">旅誌足跡</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-teal-600">保持聯絡</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-gradient-to-b from-teal-50/50 via-orange-50/30 to-amber-50/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-teal-700 text-sm font-medium">
+                        <i class="fa-solid fa-plane-departure text-orange-400"></i> 日本漫遊記
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 font-serif">
+                        你好，我是 <span class="text-teal-600">謝宜蓁</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        喜歡在漫步中記錄城市溫度、在海風裡尋找冒險意義。這是我的日本旅遊隨筆，珍藏了沖繩、東京與大阪的獨特記憶。
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="#portfolio" class="px-6 py-3 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-medium shadow-md shadow-teal-600/10 transition-all transform hover:-translate-y-0.5">
+                            探索我的足跡
+                        </a>
+                        <a href="#contact" class="px-6 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-medium transition-all transform hover:-translate-y-0.5">
+                            與我聊聊
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-teal-400 to-orange-300 opacity-30 blur-md"></div>
+                        <img class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-white shadow-xl" src="./avatar.jpg" alt="個人頭像" onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&auto=format&fit=crop&q=80'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white border-t border-b border-orange-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-slate-800 mb-8 flex items-center justify-center gap-3 font-serif">
+                <span class="h-0.5 w-6 bg-orange-300 rounded"></span>旅人簡介<span class="h-0.5 w-6 bg-orange-300 rounded"></span>
+            </h2>
+            <div class="space-y-6 text-slate-600 leading-relaxed text-base sm:text-lg text-justify sm:text-center">
+                <p>
+                    旅行對我來說，是一場抽離日常的日常。不論是背起背包獨自出發，還是在繁華的城市街道穿梭、自駕奔馳在深夜的公路上，每一個落腳點都寫成了故事。
+                </p>
+                <p>
+                    在這裡，我記錄了古蹟的沉靜、迪士尼的夢幻、百萬夜景的震撼，以及那些在深夜溫暖胃袋的拉麵。歡迎來到我的視角，一起開箱這三座城市的獨特風景。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-center text-slate-800 mb-16 flex items-center justify-center gap-3 font-serif">
+                <span class="h-0.5 w-6 bg-orange-300 rounded"></span>漫遊足跡日誌<span class="h-0.5 w-6 bg-orange-300 rounded"></span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col group">
+                    <div class="h-52 overflow-hidden bg-slate-100 relative">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="./okinawa.jpg" alt="沖繩獨旅" onerror="this.src='https://images.unsplash.com/photo-1542640244-7e672d6cef21?w=500&auto=format&fit=crop&q=60'">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1">Okinawa</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-teal-600 transition-colors">沖繩．微風與獨旅冒險</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                一個人的隨性出發。走過充滿歲月感與故事的歷史古蹟，午後待在海邊靜靜吹風、聽著浪聲，體驗專屬於海島的悠閒，這是一場獻給自己的無劇本獨自冒險。
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200/60">獨旅</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200/60">古蹟漫步</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200/60">海邊吹風</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col group">
+                    <div class="h-52 overflow-hidden bg-slate-100 relative">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="./tokyo.jpg" alt="東京之行" onerror="this.src='https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=500&auto=format&fit=crop&q=60'">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1">Tokyo</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-teal-600 transition-colors">東京．富士山與夢幻樂園</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                沉浸在迪士尼樂園的歡樂與奇幻世界，轉身走向江之電奔馳的鐮倉海岸；遠眺白雪皚皚、極具震撼的富士山，並在東京街頭排隊品嚐一碗碗熱氣騰騰的濃郁拉麵。
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200/60">迪士尼</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200/60">富士山</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200/60">拉麵地圖</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col group">
+                    <div class="h-52 overflow-hidden bg-slate-100 relative">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="./osaka.jpg" alt="大阪神戶" onerror="this.src='https://images.unsplash.com/photo-1590559899731-a382839e5549?w=500&auto=format&fit=crop&q=60'">
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1">Osaka & Kobe</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-teal-600 transition-colors">關西．影城與神戶公路自駕</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                在日本環球影城瘋玩一整天，感受滿滿的活力與電影張力。接著開啟自駕模式，一路駛向神戶山頂，在靜謐的深夜中俯瞰令人屏息、璀璨動人的百萬夜景。
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200/60">環球影城</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200/60">公路自駕</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-50 text-slate-600 border border-slate-200/60">百萬夜景</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-teal-900 text-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-center mb-16 flex items-center justify-center gap-3 font-serif">
+                <span class="h-0.5 w-6 bg-teal-400 rounded"></span>旅人留言板<span class="h-0.5 w-6 bg-teal-400 rounded"></span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div class="space-y-6 flex flex-col justify-center text-center md:text-left">
+                    <h3 class="text-xl font-bold">聊聊旅行或交換清單！</h3>
+                    <p class="text-teal-200/80 leading-relaxed text-sm">
+                        不論你是想詢問自駕路線、交流拉麵私房店單，還是單純分享你的旅行故事，都歡迎寫信或透過社群平台跟我互動。
+                    </p>
+                    <div class="space-y-4 inline-block mx-auto md:mx-0 text-left pt-2">
+                        <div class="flex items-center gap-4 text-teal-100 text-sm">
+                            <div class="w-9 h-9 rounded-xl bg-teal-950 flex items-center justify-center text-teal-300"><i class="fa-solid fa-envelope"></i></div>
+                            <span>yc.traveler@example.com</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-teal-100 text-sm">
+                            <div class="w-9 h-9 rounded-xl bg-teal-950 flex items-center justify-center text-teal-300"><i class="fa-solid fa-camera"></i></div>
+                            <span>@yi_chen_travel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl">
+                    <form onsubmit="event.preventDefault(); alert('感謝您的留言！(目前為前端功能展示)');" class="space-y-4 text-slate-800">
+                        <div>
+                            <label class="block text-xs font-medium text-teal-200 mb-1">稱呼</label>
+                            <input type="text" required class="w-full px-4 py-2 rounded-xl bg-teal-950/40 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-teal-400 text-sm" placeholder="旅伴怎麼稱呼你？">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-teal-200 mb-1">聯絡 Email</label>
+                            <input type="email" required class="w-full px-4 py-2 rounded-xl bg-teal-950/40 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-teal-400 text-sm" placeholder="name@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-teal-200 mb-1">想說的話</label>
+                            <textarea rows="3" required class="w-full px-4 py-2 rounded-xl bg-teal-950/40 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:border-teal-400 text-sm resize-none" placeholder="寫下你想交流的心得吧..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-2.5 rounded-xl bg-orange-400 hover:bg-orange-500 text-white font-medium shadow-md transition-all text-sm">
+                            送出留言
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-teal-950 border-t border-teal-900 py-6 text-center text-xs text-teal-600">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 謝宜蓁 Yi-Chen Hsieh. 日本足跡紀錄隨筆.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. 行動裝置漢堡選單切換效果
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            if (isExpanded) {
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        });
+
+        // 2. 點擊行動裝置導覽連結後，自動關閉下拉選單
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            });
+        });
+    </script>
 </body>
 </html>
